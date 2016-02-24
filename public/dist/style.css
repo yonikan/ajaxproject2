@@ -1,18 +1,24 @@
 body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  background-color: #fff; }
+  background-color: #fff;
+}
 
 .container {
   background-color: #d1d1d1;
   width: 900px;
   margin: o auto;
   height: 600px;
-  position: relative; }
-  .container .test {
-    color: #fff;
-    font-size: 12px; }
-    .container .test h2 {
-      font-weight: 400; }
+  position: relative;
+}
+
+.container .test {
+  color: #fff;
+  font-size: 12px;
+}
+
+.container .test h2 {
+  font-weight: 400;
+}
 
 .main-wrapper {
   width: 400px;
@@ -24,12 +30,23 @@ body {
   margin: 10px;
   position: relative;
   border-radius: 35px;
-  color: #fff; }
+  color: #fff;
+}
+
+.yoni {
+  color: #fff;
+  font-size: 12px;
+  padding: 3px;
+  margin: 12px;
+  display: none;
+}
 
 .main-wrapper h1 {
   font-family: 'Roboto', Arial, serif;
-  font-weight: 900; }
+  font-weight: 900;
+}
 
 .sub-wrapper {
   position: absolute;
-  left: 100px; }
+  left: 100px;
+}
