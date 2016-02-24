@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-test-app",
+  "version": "1.0.0",
+  "description": "NodeJS Test App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.0",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "mongodb": "^2.1.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0"
+  }
+}

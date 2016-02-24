@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,900' rel='stylesheet' type='text/css'>		<link href="assets/style.css" type="text/css" rel="stylesheet" />
+		<link href="/assets/dist/style.css" type="text/css" rel="stylesheet" />
+		<script src="https://code.jquery.com/jquery-2.2.1.min.js" ></script>
+	</head>
+	<body>
+
+		<div class="container">
+
+			<div class="main-wrapper">
+					<img src="assets/img/slack-logo.png" />
+					<div class="sub-wrapper">
+						<h1>Add User</h1>
+						<form method="POST" action="/users">
+								First name: <input type="text" id="firstname" name="firstname" /><br />
+								Last name: <input type="text" id="lastname" name="lastname" /><br />
+								Your picture: <input type="file" id="picture" name="pic" accept="image/*"><br><br />
+								<input type="submit" value="Submit" />
+						</form>
+					</div>
+			</div>
+
+		</div>
+
+		<script src="/assets/dist/final.js" ></script>
+	</body>
+</html>
