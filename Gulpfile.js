@@ -1,5 +1,13 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+// var concat = require('gulp-concat');
+
+// ----------------- Gulp CONCATINAT---------------------------------------------  //
+// gulp.task('scripts', function() {
+//     return gulp.src('public/js/*.js')
+//       .pipe(concat('ajax.js'))
+//       .pipe(gulp.dest('public/dist/'));
+// });
 
 
 // ----------------- Gulp SASS---------------------------------------------  //
@@ -16,9 +24,14 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(output));
 });
 
+
 // ----------------- Gulp WATCH---------------------------------------------  //
 gulp.task('watch', function() {
   return gulp
+
+    //  // Watch .js files
+    //  gulp.watch('src/js/*.js', ['scripts']);
+
     // Watch the input folder for change,
     // and run `sass` task when something happens
     .watch(input, ['sass'])
@@ -29,8 +42,11 @@ gulp.task('watch', function() {
     });
 });
 
+
 // ----------------- Gulp RUN---------------------------------------------  //
 gulp.task('default', ['sass', 'watch']);
+
+
 
 
 
