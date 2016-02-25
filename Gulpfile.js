@@ -17,7 +17,7 @@ gulp.task('scripts', function() {
 // ---SASS & AutoPrifixer-----------------------------------------------------------  //
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
-var autoprefixer = require('gulp-autoprefixer');
+// var autoprefixer = require('gulp-autoprefixer');
 var sassOptions = {
   errLogToConsole: true,
   outputStyle: 'expanded'
@@ -29,7 +29,7 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.init())
     .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(sourcemaps.write())
-    .pipe(autoprefixer())
+    // .pipe(autoprefixer())
     // .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('public/dist'));
 });
@@ -62,6 +62,7 @@ gulp.task('default', ['scripts', 'sass', 'watch']);
 //     .pipe(gulp.dest(output));
 // });
 
+// - css minify
 // - autoprefixer
 // - Generating CSS Image Sprites
 // - img optimization
