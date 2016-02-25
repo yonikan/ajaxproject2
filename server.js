@@ -1,9 +1,12 @@
+
+// --------------------------------------------------------------  //
 var express = require('express');
 var app = express();
 
-var apiController = require('./server/apiController');
-var htmlController = require('./server/htmlController');
-var port = process.env.PORT || 3000;
+var htmlController = require('./server/htmlCtrl');
+var apiController = require('./server/apiCtrl');
+// var mongoUtil = require('./server/mongoCtrl');
+// mongoUtil.connect();
 
 // --------------------------------------------------------------  //
 app.set('view engine', 'ejs');
@@ -17,7 +20,7 @@ app.use('/', function (req, res, next) {
 
 // --------------------------------------------------------------  //
 htmlController(app);
-
 apiController(app);
 
+var port = process.env.PORT || 3000;
 app.listen(port);
