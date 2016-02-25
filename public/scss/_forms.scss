@@ -1,0 +1,200 @@
+
+
+
+
+
+
+//
+///* form-elements ========================================================*/
+//input[type="text"],
+//textarea,
+//textarea.form-control {
+//	height: 50px;
+//	margin: 0;
+//	padding: 0 20px;
+//	vertical-align: middle;
+//	background: #f8f8f8;
+//	border: 3px solid #ddd;
+//	font-family: $font-roboto;
+//	font-size: 16px;
+//	font-weight: 300;
+//	line-height: 50px;
+//	color: #888;
+//	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+//	-moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+//	-o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+//}
+//
+//textarea,
+//textarea.form-control {
+//	padding-top: 10px;
+//	padding-bottom: 10px;
+//	line-height: 30px;
+//}
+//
+//input[type="text"]:focus,
+//textarea:focus,
+//textarea.form-control:focus {
+//	outline: 0;
+//	background: #fff;
+//	border: 3px solid #ccc;
+//	-moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+//}
+//
+//input[type="text"]:-moz-placeholder, textarea:-moz-placeholder, textarea.form-control:-moz-placeholder { color: #888; }
+//input[type="text"]:-ms-input-placeholder, textarea:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder { color: #888; }
+//input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder { color: #888; }
+//
+//
+///* BUTTONS ========================================================*/
+//button.btn {
+//	height: 50px;
+//	margin: 0;
+//	padding: 0 20px;
+//	vertical-align: middle;
+//	background: #c6e20c;
+//	border: 0;
+//	font-family: $font-roboto;
+//	font-size: 16px;
+//	font-weight: 300;
+//	line-height: 50px;
+//	color: #fff;
+//	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+//	text-shadow: none;
+//	-moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+//	-o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+//}
+//
+//button.btn:hover { opacity: 0.6; color: #fff; }
+//
+//button.btn:active { outline: 0; opacity: 0.6; color: #fff; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
+//
+//button.btn:focus { outline: 0; opacity: 0.6; background: #c6e20c; color: #fff; }
+//
+//button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; background: #c6e20c; color: #fff; }
+//
+//.btn-bolt {
+//	color: $black;
+//	background-color: $bolt;
+//	border-color: $white;
+//}
+//.btn-black {
+//	color: $white;
+//	background-color: $black;
+//	border-color: $white;
+//}
+//
+//
+//.btn-link-1 {
+//	display: inline-block;
+//	height: 50px;
+//	margin: 0 5px;
+//	padding: 16px 20px 0 20px;
+//	background: #19b9e7;
+//	font-size: 16px;
+//	font-weight: 300;
+//	line-height: 16px;
+//	color: #fff;
+//	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+//}
+//.btn-link-1:hover, .btn-link-1:focus, .btn-link-1:active { outline: 0; opacity: 0.6; color: #fff; }
+//
+//.btn-link-2 {
+//	display: inline-block;
+//	height: 50px;
+//	margin: 0 5px;
+//	padding: 15px 20px 0 20px;
+//	background: rgba(0, 0, 0, 0.3);
+//	border: 1px solid #fff;
+//	font-size: 16px;
+//	font-weight: 300;
+//	line-height: 16px;
+//	color: #fff;
+//	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+//}
+//.btn-link-2:hover, .btn-link-2:focus,
+//.btn-link-2:active, .btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); color: #fff; }
+//
+//
+//
+///* LOGIN TOGGLE LAYOUT ========================================================*/
+//
+//.medium-paragraph {
+//	font-size: 18px;
+//	line-height: 32px;
+//}
+//.top-content {
+//
+//	.text {
+//		padding-top: 120px;
+//		color: #fff;
+//
+//		h1 {
+//			color: #fff;
+//		}
+//	}
+//
+//	.description {
+//		margin: 20px 0 10px 0;
+//
+//		p {
+//			opacity: 0.8;
+//		}
+//
+//		a {
+//			color: #fff;
+//		}
+//
+//		a:hover, a:focus {
+//			border-bottom: 1px dotted #fff;
+//		}
+//	}
+//
+//	.top-big-link {
+//		margin-top: 35px;
+//	}
+//}
+//
+//
+///*  ========================================================*/
+//.form-top {
+//	overflow: hidden;
+//	padding: 0 25px 15px 25px;
+//	background-color: rgba(0, 0, 0, 0.5);;
+//	-moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
+//	text-align: left;
+//}
+//.form-top-left {
+//	float: left;
+//	width: 75%;
+//	padding-top: 25px;
+//
+//	h3 {
+//		margin-top: 0;
+//	}
+//}
+//.form-top-right {
+//	float: left;
+//	width: 25%;
+//	padding-top: 5px;
+//	font-size: 66px;
+//	color: #ddd;
+//	line-height: 100px;
+//	text-align: right;
+//}
+//.form-bottom {
+//	padding: 25px 25px 30px 25px;
+//	background-color: rgba(235, 235, 235, 0.5);
+//	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
+//	text-align: left;
+//
+//	form {
+//		textarea {
+//			height: 100px;
+//		}
+//
+//		.input-error {
+//			border-color: #19b9e7;
+//		}
+//	}
+//}

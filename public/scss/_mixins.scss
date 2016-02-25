@@ -1,0 +1,302 @@
+
+
+
+
+//// placeholders
+//%vertical-align {
+//    @include transform(translateY(-50%), false);
+//    position: relative;
+//    top: 50%;
+//}
+//
+//%full-justify {
+//    text-align: justify;
+//
+//    &:after {
+//        @include inline-block();
+//        content: '';
+//        width: 100%;
+//    }
+//}
+//
+//// mixins
+//@mixin define-breakpoint($name) {
+//    // store active breakpoint name in ::pseudo content
+//    &:after {
+//        clip: rect(0 0 0 0);
+//        content: $name;
+//        height: 0;
+//        overflow: hidden;
+//        position: absolute;
+//        visibility: hidden;
+//        width: 0;
+//    }
+//
+//    // add fallback style using breakpoint name
+//    .js-breakpoints-#{$name} {
+//        position: absolute;
+//    }
+//}
+//
+//@mixin get-sprite($map, $sprite, $repeat: no-repeat, $height: true, $width: true) {
+//    $sprite-image: sprite-file($map, $sprite);
+//    $sprite-map: sprite-url($map);
+//    $sprite-position: sprite-position($map, $sprite);
+//    background: $sprite-map $sprite-position $repeat;
+//
+//    @if $height == true {
+//        $sprite-height: image-height($sprite-image);
+//        height: $sprite-height;
+//    }
+//
+//    @if $width == true {
+//        $sprite-width: image-width($sprite-image);
+//        width: $sprite-width;
+//    }
+//}
+//
+//@function strip-unit($value) {
+//    @return $value / ($value * 0 + 1);
+//}
+//
+//@function get-sprite-width($map, $sprite-name, $strip-unit:true) {
+//    $sprite-image: sprite-file($map, $sprite-name);
+//    $sprite-width: image-width($sprite-image);
+//
+//    @if ($strip-unit) {
+//        @return strip-unit($sprite-width);
+//    } @else {
+//        @return $sprite-width;
+//    }
+//}
+//
+//@function get-sprite-height($map, $sprite-name, $strip-unit:true) {
+//    $sprite-image: sprite-file($map, $sprite-name);
+//    $sprite-height: image-height($sprite-image);
+//
+//    @if ($strip-unit) {
+//        @return strip-unit($sprite-height);
+//    } @else {
+//        @return $sprite-height;
+//    }
+//}
+//
+//// =sprites($map, $sprite-names, $base-class: false, $dimensions: false, $prefix: sprite-map-name($map), $offset-x: 0, $offset-y: 0)
+////   @each $sprite-name in $sprite-names
+////     @if sprite_does_not_have_parent($map, $sprite-name)
+////       $full-sprite-name: "#{$prefix}-#{$sprite-name}"
+////       %#{$full-sprite-name}
+////         @if $base-class
+////           @extend #{$base-class}
+////         +sprite($map, $sprite-name, $dimensions, $offset-x, $offset-y)
+//
+//@mixin resize-sprite($map, $sprite, $percent) {
+//    $sprite-path: sprite-path($map);
+//    $sprite-width: image-width($sprite-path);
+//    $sprite-height: image-height($sprite-path);
+//    $width: image-width(sprite-file($map, $sprite));
+//    $height: image-height(sprite-file($map, $sprite));
+//    @include background-size(ceil($sprite-width * ($percent / 100)) ceil($sprite-height * ($percent / 100)));
+//    background-position: 0 floor(nth(sprite-position($map, $sprite), 2) * ($percent / 100));
+//    height: ceil($height * ($percent / 100));
+//    width: ceil($width * ($percent / 100));
+//}
+//
+//@mixin resize-sprite-set($map, $percent, $only...) {
+//    $name: 'mobile-' + sprite-map-name($map);
+//
+//    @each $sprite in sprite-names($map) {
+//        @if length($only) == 0 or index($only, $sprite) != false {
+//            .#{$name}-#{$sprite} {
+//                @include resize-sprite($map, $sprite, $percent);
+//            }
+//        }
+//    }
+//}
+//
+//// generates font-size in 'rem' with fallback to 'px'
+//// relative to root font-size defined for html tag
+//
+//@mixin x-rem($property, $value, $important:null) {
+//    @if $important {
+//        #{$property}: $value + px !important;
+//        #{$property}: $value / $font-size-default-px + rem !important;
+//    } @else {
+//        #{$property}: $value + px;
+//        #{$property}: $value / $font-size-default-px + rem;
+//    }
+//}
+//
+//@mixin optional-at-root($sel) {
+//    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+//        @content;
+//    }
+//}
+//
+//@mixin placeholder {
+//    @include optional-at-root('::-webkit-input-placeholder') {
+//        @content;
+//    }
+//
+//    @include optional-at-root(':-moz-placeholder') {
+//        @content;
+//    }
+//
+//    @include optional-at-root('::-moz-placeholder') {
+//        @content;
+//    }
+//
+//    @include optional-at-root(':-ms-input-placeholder') {
+//        @content;
+//    }
+//}
+//
+//// generates breakpoint
+//@mixin x-rem-breakpoint($property, $value, $media-type:all, $operator:'and') {
+//    @media #{$media-type} and (#{$property}:$value + px) {
+//        @content;
+//    }
+//
+//    // @media #{$media-type} and (#{$property}:$value / $font-size-16px + rem) {@content;}
+//}
+//
+//@mixin x-rem-pad($padding-top:null, $padding-right:null, $padding-bottom:null, $padding-left:null) {
+//    @if $padding-top {
+//        padding-top: $padding-top + px;
+//        padding-top: $padding-top / $font-size-14px + rem;
+//    }
+//
+//    @if $padding-right {
+//        padding-right: $padding-right + px;
+//        padding-right: $padding-right / $font-size-14px + rem;
+//    }
+//
+//    @if $padding-bottom {
+//        padding-bottom: $padding-bottom + px;
+//        padding-bottom: $padding-bottom / $font-size-14px + rem;
+//    }
+//
+//    @if $padding-left {
+//        padding-left: $padding-left + px;
+//        padding-left: $padding-left / $font-size-14px + rem;
+//    }
+//}
+//
+//@mixin x-rem-mar($margin-top:null, $margin-right:null, $margin-bottom:null, $margin-left:null) {
+//    @if $margin-top {
+//        margin-top: $margin-top + px;
+//        margin-top: $margin-top / $font-size-14px + rem;
+//    }
+//
+//    @if $margin-right {
+//        margin-right: $margin-right + px;
+//        margin-right: $margin-right / $font-size-14px + rem;
+//    }
+//
+//    @if $margin-bottom {
+//        margin-bottom: $margin-bottom + px;
+//        margin-bottom: $margin-bottom / $font-size-14px + rem;
+//    }
+//
+//    @if $margin-left {
+//        margin-left: $margin-left + px;
+//        margin-left: $margin-left / $font-size-14px + rem;
+//    }
+//}
+//
+//// generates equal width/height properties
+//@mixin x-wh($size) {
+//    width: $size;
+//    height: $size;
+//}
+//
+//// generates position absolute properties
+//@mixin abs-pos($top:null, $right:null, $bottom:null, $left:null, $fixed:null) {
+//    @if $fixed {
+//        position: fixed;
+//    } @else {
+//        position: absolute;
+//    }
+//    top: $top;
+//    right: $right;
+//    bottom: $bottom;
+//    left: $left;
+//}
+//
+//// generates wobi style gradient properties
+//@mixin wobi-gradient-btn($text-color, $top-color, $bottom-color, $border-color, $border-bottom-width:2) {
+//    color: $text-color;
+//    background-color: $bottom-color;
+//    border-bottom: $border-bottom-width + px solid $border-color;
+//    @include filter-gradient($bottom-color, $top-color, vertical);
+//    @include background-image(linear-gradient(top, $top-color 0%, $top-color 50%, $bottom-color 50%, $bottom-color 100%));
+//}
+//
+//// generates background properties; $repeat is optional
+//@mixin bg-img($url, $position, $repeat:no-repeat) {
+//    background-image: url($url);
+//
+//    @if $position {
+//        background-position: $position;
+//    }
+//
+//    @if $repeat {
+//        background-repeat: $repeat;
+//    }
+//}
+//
+//// generates an arrow pointing down
+//@mixin caret($size, $position, $color) {
+//    content: '';
+//    left: 50%;
+//    position: absolute;
+//    border-left: $size solid transparent;
+//    border-right: $size solid transparent;
+//    border-top: $size solid $color;
+//    margin-left: -$size;
+//    bottom: -$size;
+//}
+//
+//@mixin touch-action($value: none) {
+//    -ms-touch-action: $value;
+//    touch-action: $value;
+//}
+//
+//// @mixin textarea-placeholder($color){
+////     input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+////         color:$color;
+////     }
+////
+////     input:-moz-placeholder, textarea:-moz-placeholder {
+////         color:$color;
+////     }
+//// }
+//// @mixin placeholder($color, $size:'') {
+////     &::-webkit-input-placeholder {
+////         color:$color;
+////         @if $size != '' {
+////             font-size:$size;
+////         }
+////     }
+////
+////     &:-moz-placeholder {
+////         color:$color;
+////         @if $size != '' {
+////             font-size:$size;
+////         }
+////     }
+////
+////     &::-moz-placeholder {
+////         color:$color;
+////         @if $size != '' {
+////             font-size:$size;
+////         }
+////     }
+////
+////     &:-ms-input-placeholder {
+////         color:$color;
+////         @if $size != '' {
+////             font-size:$size;
+////         }
+////     }
+//// }
